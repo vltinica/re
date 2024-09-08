@@ -13,6 +13,15 @@ const [projectsState, setProjectsState] = useState({
   projects: []
 })
 
+function handleSelectProject(id) {
+  setProjectsState(prevState => {
+    return {
+      ...prevState,
+      selectedProjectId: id,
+    }
+  })
+}
+
 function handleStartAddProject() {
   setProjectsState(prevState => {
     return {
@@ -58,7 +67,7 @@ if (projectsState.selectedProjectId === null) {
 
   return (
     <main className="h-screen my-8 flex gap-8">
-      <ProjectsSidebar onStartAddProject={handleStartAddProject}  projects={projectsState.projects} />  
+      <ProjectsSidebar onStartAddProject={handleStartAddProject}  projects={projectsState.projects} onSelectProject={handleSelectProject} />  
       {content}
     </main>
   );
