@@ -16,9 +16,9 @@ const NoProjectSelected = ({onStartAddProject}) => {
       <p className="text-stone-400 mb-4">
         Select a project or get started with a new one.
       </p>
-      <p className="mt-8">
+      <div className="mt-8">
         <Button onClick={onStartAddProject}> Create new project</Button>
-      </p>
+      </div>
     </div>
   );
 };
